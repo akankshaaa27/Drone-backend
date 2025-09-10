@@ -10,11 +10,6 @@ import com.test.service.EntryService;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = { 
-    "http://localhost:3000", 
-    "https://your-frontend.onrender.com",
-    "https://shreenath-drone-frontend.vercel.app" 
-})
 public class EntryController {
 
     @Autowired
