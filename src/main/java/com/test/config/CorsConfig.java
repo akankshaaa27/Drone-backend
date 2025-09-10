@@ -12,7 +12,8 @@ public class CorsConfig implements WebMvcConfigurer {
         registry.addMapping("/**")
                 .allowedOrigins(
                         "http://localhost:3000", 
-                        "https://shreenath-drone-frontend.vercel.app"
+                        "https://shreenath-drone-frontend.vercel.app",
+                        "https://drone-backend-mxs4.onrender.com" // ✅ add this frontend domain
                 )
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                 .allowedHeaders("*")
