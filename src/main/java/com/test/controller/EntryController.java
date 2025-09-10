@@ -10,6 +10,7 @@ import com.test.service.EntryService;
 
 @RestController
 @RequestMapping("/api")
+@CrossOrigin(origins = "http://localhost:5173") // ✅ Allow Vite frontend explicitly
 public class EntryController {
 
     @Autowired

@@ -17,8 +17,9 @@ public class Entry {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @JsonFormat(pattern = "dd-MM-yyyy")
+    @JsonFormat(pattern = "yyyy-MM-dd") // ✅ Match React date format
     private LocalDate date;
+
 
     private String location;
     private String farmerName;
