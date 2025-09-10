@@ -11,12 +11,11 @@ public class CorsConfig implements WebMvcConfigurer {
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
                 .allowedOrigins(
-                        "http://localhost:3000", 
-                        "https://shreenath-drone-frontend.vercel.app",
-                        "https://drone-backend-mxs4.onrender.com" // ✅ add this frontend domain
+                        "http://localhost:5173", // Local frontend during development
+                        "https://drone-frontend-one.vercel.app" // ✅ Your live frontend URL
                 )
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                 .allowedHeaders("*")
-                .allowCredentials(true);
+                .allowCredentials(true); // allows cookies, JWT tokens, etc.
     }
 }

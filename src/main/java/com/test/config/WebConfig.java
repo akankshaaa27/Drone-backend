@@ -13,15 +13,19 @@ public class WebConfig implements WebMvcConfigurer {
      */
     @Override
     public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/api/**") // Matches your controller base URL
-                .allowedOrigins("http://localhost:5173") // React/Vite frontend
+        registry.addMapping("/api/**") // Only for API routes
+                .allowedOrigins(
+                        "http://localhost:5173",               // Local development
+                        "https://drone-frontend-one.vercel.app" // ✅ Deployed Vercel frontend
+                )
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                 .allowedHeaders("*")
                 .allowCredentials(true);
     }
 
     /**
-     * Keep React routing support for non-API paths
+     * This ensures React routing works by forwarding all non-API routes
+     * to index.html so React Router can handle them.
      */
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
