@@ -10,10 +10,10 @@ import com.test.service.EntryService;
 
 @RestController
 @RequestMapping("/api")
-//@CrossOrigin(origins = {
-//	    "http://localhost:5173",
-//	    "https://drone-frontend-one.vercel.app"
-//	})
+@CrossOrigin(origins = {
+	    "http://localhost:5173",
+	    "https://drone-frontend-one.vercel.app"
+	})
 
 public class EntryController {
 
